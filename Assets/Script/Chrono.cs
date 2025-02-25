@@ -7,6 +7,8 @@ public static void Main()
     stopWatch.Start();
     Thread.Sleep(10000);
     stopWatch.Stop();
+
+    // rajouter un commentaire
     // Get the elapsed time as a TimeSpan value.
     TimeSpan ts = stopWatch.Elapsed;
 
