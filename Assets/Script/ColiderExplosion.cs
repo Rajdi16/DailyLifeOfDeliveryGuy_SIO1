@@ -77,6 +77,7 @@ public class ColiderExplosion : MonoBehaviour
                 other.gameObject.SetActive(false);
                 Destroy(other.gameObject);
             } 
+
             if (other.gameObject.tag != "Player")
             {
                 Instantiate(explosionParticle, other.transform.position, other.transform.rotation);
