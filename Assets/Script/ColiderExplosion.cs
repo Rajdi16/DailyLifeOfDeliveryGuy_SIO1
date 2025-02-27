@@ -67,15 +67,16 @@ public class ColiderExplosion : MonoBehaviour
         explosion = true;
     }
 
+    //Nous avons mit un tag du nom de "car" à toutes les voitures
     private void OnTriggerStay(Collider other)
     {
         if (explosion)
         {
 
-            if (other.gameObject.tag == "car")
+            if (other.gameObject.tag == "car") //Si l'objet rentre en collision avec un objet avec le tag car
             {
-                other.gameObject.SetActive(false);
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false); //L'objet se désactive
+                Destroy(other.gameObject); //L'objet se détruit
             } 
 
             if (other.gameObject.tag != "Player")
