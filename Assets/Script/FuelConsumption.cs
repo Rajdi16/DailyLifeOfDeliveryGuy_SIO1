@@ -5,8 +5,8 @@ using UnityEngine;
 public class FuelConsumption : MonoBehaviour
 {
     public float fuel = 10000;
-    public float fuelConsumptionRateRunning = 0,00000001;
-    public float fuelConsumptionRateWalking = 0,0000000001;
+    public float fuelConsumptionRateRunning = 3;
+    public float fuelConsumptionRateWalking = 1;
 
     private LivraisonCarMovement carMovement;
 
@@ -23,11 +23,11 @@ public class FuelConsumption : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.LeftShift))
                 {
-                    fuel -= fuelConsumptionRateRunning ;
+                    fuel -= fuelConsumptionRateRunning * Time.deltaTime;
                 }
                 else
                 {
-                    fuel -= fuelConsumptionRateWalking;
+                    fuel -= fuelConsumptionRateWalking * Time.deltaTime;
                 }
             }
 
