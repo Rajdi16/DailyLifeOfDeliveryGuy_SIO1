@@ -38,4 +38,11 @@ public class FuelConsumption : MonoBehaviour
             }
         }
     }
+
+
+
+    private void addFuel(int quantite)
+    {
+        fuel += quantite
+    }
 }
