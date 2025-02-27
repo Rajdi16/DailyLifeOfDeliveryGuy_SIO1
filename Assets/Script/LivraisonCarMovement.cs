@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class LivraisonCarMovement : MonoBehaviour
@@ -11,11 +12,11 @@ public class LivraisonCarMovement : MonoBehaviour
 
     public bool isRunning = false;
     private Vector2 input;
-    [SerializeField] Rigidbody rigidbody;
+    [SerializeField] private Rigidbody rigidbody;
 
     private bool isGrounded = true;
 
-    [SerializeField] GameObject player;
+    [SerializeField] private GameObject player;
 
     private FuelConsumption fuelConsumption;
 
@@ -27,23 +28,17 @@ public class LivraisonCarMovement : MonoBehaviour
 
     private void Update()
     {
-        if (fuelConsumption.fuel > 0)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                speed = runSpeed;
-                isRunning = true;
-            }
-            else
-            {
-                speed = walkSpeed;
-                isRunning = false;
-            }
+            speed = runSpeed;
+            isRunning = true;
         }
         else
         {
-            speed = 0;
+            speed = walkSpeed;
+            isRunning = false;
         }
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && Time.deltaTime != 0)
         {
             Instantiate(player, gameObject.transform.position, gameObject.transform.rotation);
@@ -58,16 +53,13 @@ public class LivraisonCarMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
+        Vector3 desireRotation = new Vector3(0, input.x * horizontalSpeed * Time.deltaTime, 0);
+        rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(desireRotation));
 
-        {
-            Vector3 desireRotation = new Vector3(0, input.x * horizontalSpeed * Time.deltaTime, 0);
-            rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(desireRotation));
-
-            Vector3 movement = new Vector3(transform.forward.x * input.y * speed * Time.deltaTime, 0, transform.forward.z * input.y * speed * Time.deltaTime);
-            rigidbody.MovePosition(transform.position + movement);
-        }
+        Vector3 movement = new Vector3(transform.forward.x * input.y * speed * Time.deltaTime, 0, transform.forward.z * input.y * speed * Time.deltaTime);
+        rigidbody.MovePosition(transform.position + movement);
     }
 
     private void OnCollisionEnter(Collision collision)

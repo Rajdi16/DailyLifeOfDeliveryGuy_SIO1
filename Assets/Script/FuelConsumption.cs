@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
-public class FuelConsumption : MonoBehaviour
+public class FuelConsumption
 {
     public float fuel = 100000;
     public float fuelConsumptionRateRunning = 3;
     public float fuelConsumptionRateWalking = 1;
 
     private LivraisonCarMovement carMovement;
+
     private void Start()
     {
         carMovement = GetComponent<LivraisonCarMovement>();
@@ -16,22 +18,23 @@ public class FuelConsumption : MonoBehaviour
 
     private void Update()
     {
-        print (fuel);
+        
         if (fuel > 0)
         {
-            if (LivraisonCarMovement.isRunning)
+            if (carMovement.isRunning)
             {
-                fuel -= fuelConsumptionRateRunning;
+                fuel -= fuelConsumptionRateRunning * Time.deltaTime;
             }
             else
             {
-                fuel -= fuelConsumptionRateWalking;
+                fuel -= fuelConsumptionRateWalking * Time.deltaTime;
             }
 
             if (fuel <= 0)
             {
                 fuel = 0;
-                print("Out of fuel");
+                
+                carMovement.speed = 0;
             }
         }
     }
