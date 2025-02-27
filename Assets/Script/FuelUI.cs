@@ -8,6 +8,10 @@ public class FuelUI : MonoBehaviour
     public Image Pointe;
     public FuelConsumption fuelConsumption;
 
+    private void Start()
+    {
+        FuelOnJauge.text = "000"; // Par défaut
+    }
     private void Update()
     {
         FuelOnJauge.text = Mathf.Max(fuelConsumption.fuel, 0).ToString("F2");
