@@ -34,34 +34,33 @@ public class LivraisonCarMovement : MonoBehaviour
                 speed = runSpeed;
                 isRunning = true;
             }
-            else if (!Input.GetKey(KeyCode.LeftShift))
+            else
             {
                 speed = walkSpeed;
                 isRunning = false;
-            }
-
-            if (Input.GetKeyDown(KeyCode.Mouse0) && Time.deltaTime != 0)
-            {
-                Instantiate(player, gameObject.transform.position, gameObject.transform.rotation);
-                Destroy(gameObject);
-            }
-
-            input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-            if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-            {
-                isGrounded = false;
             }
         }
         else
         {
             speed = 0;
         }
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.deltaTime != 0)
+        {
+            Instantiate(player, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(gameObject);
+        }
+
+        input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            isGrounded = false;
+        }
     }
 
     void FixedUpdate()
     {
-        if (fuelConsumption.fuel > 0)
+
         {
             Vector3 desireRotation = new Vector3(0, input.x * horizontalSpeed * Time.deltaTime, 0);
             rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(desireRotation));
