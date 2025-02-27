@@ -39,18 +39,14 @@ public class ColiderExplosion : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "BobBullet")
+
+        if (collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "BobBullet")
         {
             transform.gameObject.tag = "BobBullet";
 
             ShowFloatingText();
             Invoke("Explosion", 2f);
-
-            //Disparition de la voiture
-            if (collision.gameObject.tag == "car")
-            {
-                Destroy(gameObject.tag);
-            }
+            Destroy(gameObject);
         }
 
     }
