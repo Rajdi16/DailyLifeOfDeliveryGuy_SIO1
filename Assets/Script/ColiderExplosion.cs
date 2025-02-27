@@ -43,10 +43,6 @@ public class ColiderExplosion : MonoBehaviour
         if (collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "BobBullet")
         {
 
-            if (collision.gameObject.tag == "car")
-            {
-                Destroy(collision.gameObject);
-            }
             transform.gameObject.tag = "BobBullet";
 
             ShowFloatingText();
@@ -75,6 +71,12 @@ public class ColiderExplosion : MonoBehaviour
     {
         if (explosion)
         {
+
+            if (other.gameObject.tag == "car")
+            {
+                other.gameObject.SetActive(false);
+                Destroy(other.gameObject);
+            } 
             if (other.gameObject.tag != "Player")
             {
                 Instantiate(explosionParticle, other.transform.position, other.transform.rotation);
