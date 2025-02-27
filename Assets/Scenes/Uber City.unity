@@ -7675,9 +7675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498a5d6bbfb088246a10c43e6aab1871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstItemPrice: 15
-  secondItemPrice: 12
-  thirdItemPrice: 24
+  firstItemPrice: 5
+  secondItemPrice: 9
+  thirdItemPrice: 17
   shop: {fileID: 1268761774}
   deliveryCar: {fileID: 6823345047807810595, guid: 3089ff5faa3bf734eaa632767462529b, type: 3}
   interactButton: {fileID: 1643881024}
@@ -7688,10 +7688,10 @@ MonoBehaviour:
   price1: {fileID: 733246901}
   price2: {fileID: 1271509364}
   price3: {fileID: 801063842}
-  shopTypeName: Fried Chicken
-  item1Name: 'FC Nugget :'
-  item2Name: 'FC ChicBurger :'
-  item3Name: 'FC Adjudant menu :'
+  shopTypeName: Fuel
+  item1Name: 5L
+  item2Name: 10L
+  item3Name: 20L
 --- !u!65 &303359534
 BoxCollider:
   m_ObjectHideFlags: 0
