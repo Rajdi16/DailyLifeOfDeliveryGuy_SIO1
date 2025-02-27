@@ -45,6 +45,12 @@ public class ColiderExplosion : MonoBehaviour
 
             ShowFloatingText();
             Invoke("Explosion", 2f);
+
+            //Disparition de la voiture
+            if (collision.gameObject.tag == "car")
+            {
+                Destroy(gameObject.tag);
+            }
         }
 
     }
