@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -911,6 +911,7 @@ Transform:
   - {fileID: 1765264749}
   - {fileID: 1397962711}
   - {fileID: 126657028}
+  - {fileID: 303359532}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &31992576
@@ -3280,6 +3281,7 @@ MonoBehaviour:
   secondItemPrice: 12
   thirdItemPrice: 24
   shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 0}
   interactButton: {fileID: 1643881024}
   shopType: {fileID: 1084195169}
   item1: {fileID: 1833219803}
@@ -3654,6 +3656,7 @@ MonoBehaviour:
   secondItemPrice: 12
   thirdItemPrice: 24
   shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 0}
   interactButton: {fileID: 1643881024}
   shopType: {fileID: 1084195169}
   item1: {fileID: 1833219803}
@@ -7627,6 +7630,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 800befcc62026a34693972077c91698d, type: 3}
   m_PrefabInstance: {fileID: 302893913}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &303359531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 303359532}
+  - component: {fileID: 303359534}
+  - component: {fileID: 303359533}
+  m_Layer: 0
+  m_Name: gas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &303359532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303359531}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 94.49, y: -14.51, z: 27.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 31371806}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &303359533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303359531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498a5d6bbfb088246a10c43e6aab1871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstItemPrice: 15
+  secondItemPrice: 12
+  thirdItemPrice: 24
+  shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 6823345047807810595, guid: 3089ff5faa3bf734eaa632767462529b, type: 3}
+  interactButton: {fileID: 1643881024}
+  shopType: {fileID: 1084195169}
+  item1: {fileID: 1833219803}
+  item2: {fileID: 284789093}
+  item3: {fileID: 136650214}
+  price1: {fileID: 733246901}
+  price2: {fileID: 1271509364}
+  price3: {fileID: 801063842}
+  shopTypeName: Fried Chicken
+  item1Name: 'FC Nugget :'
+  item2Name: 'FC ChicBurger :'
+  item3Name: 'FC Adjudant menu :'
+--- !u!65 &303359534
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303359531}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &305033269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7838,6 +7924,7 @@ MonoBehaviour:
   secondItemPrice: 12
   thirdItemPrice: 14
   shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 0}
   interactButton: {fileID: 1643881024}
   shopType: {fileID: 1084195169}
   item1: {fileID: 1833219803}
@@ -18639,6 +18726,7 @@ MonoBehaviour:
   secondItemPrice: 12
   thirdItemPrice: 14
   shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 0}
   interactButton: {fileID: 1643881024}
   shopType: {fileID: 1084195169}
   item1: {fileID: 1833219803}
@@ -29406,6 +29494,7 @@ MonoBehaviour:
   secondItemPrice: 4
   thirdItemPrice: 7
   shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 0}
   interactButton: {fileID: 1643881024}
   shopType: {fileID: 1084195169}
   item1: {fileID: 1833219803}
@@ -34347,6 +34436,7 @@ MonoBehaviour:
   secondItemPrice: 10
   thirdItemPrice: 13
   shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 0}
   interactButton: {fileID: 1643881024}
   shopType: {fileID: 1084195169}
   item1: {fileID: 1833219803}
@@ -37141,6 +37231,7 @@ MonoBehaviour:
   secondItemPrice: 12
   thirdItemPrice: 14
   shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 0}
   interactButton: {fileID: 1643881024}
   shopType: {fileID: 1084195169}
   item1: {fileID: 1833219803}
@@ -42856,6 +42947,7 @@ MonoBehaviour:
   secondItemPrice: 10
   thirdItemPrice: 13
   shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 0}
   interactButton: {fileID: 1643881024}
   shopType: {fileID: 1084195169}
   item1: {fileID: 1833219803}
@@ -46793,6 +46885,7 @@ MonoBehaviour:
   secondItemPrice: 12
   thirdItemPrice: 24
   shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 0}
   interactButton: {fileID: 1643881024}
   shopType: {fileID: 1084195169}
   item1: {fileID: 1833219803}
@@ -47481,6 +47574,7 @@ MonoBehaviour:
   secondItemPrice: 12
   thirdItemPrice: 14
   shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 0}
   interactButton: {fileID: 1643881024}
   shopType: {fileID: 1084195169}
   item1: {fileID: 1833219803}
@@ -48397,6 +48491,7 @@ MonoBehaviour:
   secondItemPrice: 4
   thirdItemPrice: 7
   shop: {fileID: 1268761774}
+  deliveryCar: {fileID: 0}
   interactButton: {fileID: 1643881024}
   shopType: {fileID: 1084195169}
   item1: {fileID: 1833219803}

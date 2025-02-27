@@ -11,7 +11,6 @@ public class Shop : MonoBehaviour
 
     int money;
     [SerializeField] GameObject shop;
-
     [SerializeField] GameObject interactButton;
     bool gameIsPaused;
 
