@@ -42,11 +42,15 @@ public class ColiderExplosion : MonoBehaviour
 
         if (collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "BobBullet")
         {
+
+            if (collision.gameObject.tag == "car")
+            {
+                Destroy(collision.gameObject);
+            }
             transform.gameObject.tag = "BobBullet";
 
             ShowFloatingText();
             Invoke("Explosion", 2f);
-            Destroy(gameObject);
         }
 
     }
