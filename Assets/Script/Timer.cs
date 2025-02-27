@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour //Provides the fonctionnality to control game
 {
     [SerializeField] TextMeshProUGUI timerText; 
     float elapsedTime; // Creation of variable to store time from the beginning of the game
-    void Update()
+    void Update() //each time the game is restarted, the timer is reset to 0
     {
         elapsedTime += Time.deltaTime; //Time increment
         timerText.text = elapsedTime.ToString(); //display time as a character string  
